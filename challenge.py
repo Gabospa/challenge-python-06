@@ -3,7 +3,9 @@ def make_division_by(n):
        of an x number by n 
     """
     # You have to code here!
-    pass
+    def divider (number):
+        return number / n
+    return divider
 
 
 def run():
@@ -15,14 +17,19 @@ def run():
 
     division_by_18 = make_division_by(18)
     print(division_by_18(54))  # The expected output is 3
-
+    
+    unittest.main()
 
 if __name__ == '__main__':
     import unittest
-
     class ClosureSuite(unittest.TestCase):
         def test_closure_make_division_by(self):
-            # Make the closure test here
-            pass
-
+            """ Test if division between integers is right """
+            data = 18
+            division_by_3 = make_division_by(3)
+            result = division_by_3(data)
+            self.assertEqual(result, 6, 'El resultado debe ser 6')
+    
     run()
+    
+
